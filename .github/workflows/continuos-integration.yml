@@ -24,5 +24,5 @@ jobs:
       run: dotnet restore src/Postech.PhaseOne.GroupEight.TechChallenge.sln
     - name: Build
       run: dotnet build src/Postech.PhaseOne.GroupEight.TechChallenge.sln --no-restore
-    - name: Test
-      run: dotnet test src/Postech.PhaseOne.GroupEight.TechChallenge.sln --no-build --verbosity normal
+    - name: Run Tests and Collect Coverage
+      run: dotnet test src/Postech.PhaseOne.GroupEight.TechChallenge.sln --no-build --collect:"XPlat Code Coverage" --logger "trx;LogFileName=test_results.trx"
